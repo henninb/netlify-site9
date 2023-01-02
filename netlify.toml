@@ -5,6 +5,8 @@
   functions = "functions"
   publish = "public"
 
+[functions]
+  node_bundler = "esbuild" 
 # [functions]
 #   directory = "functions"
 #   node_bundler = "esbuild"
@@ -17,6 +19,7 @@
 # directory = "functions"
 
 [dev]
+  # command = "npm start"
   publish = "public"
   functions = "functions"
   # functions = "lambda"
