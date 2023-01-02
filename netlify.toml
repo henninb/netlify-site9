@@ -1,39 +1,20 @@
 [build]
-  # command = "npm run build"
-  # functions = "functions"
-  # functions = "lambda"
   functions = "functions"
   publish = "public"
 
 [functions]
   node_bundler = "esbuild" 
-# [functions]
-#   directory = "functions"
-#   node_bundler = "esbuild"
-
-# [functions]
-# Directory with serverless functions, including background functions,
-# to deploy. This is relative to the base directory if one has been set, 
-# or the root directory if a base hasn’t been set.
-# directory = ".netlify/functions"
-# directory = "functions"
 
 [dev]
-  # command = "npm start"
   publish = "public"
   functions = "functions"
-  # functions = "lambda"
-  # functions = ".netlify/functions"
   
-# [[redirects]]
-#    from = "/functions/*"
-#    to = "/.netlify/functions/:splat"
-#    status = 200
-#
-# # [[redirects]]
-# #   from = "/api/*"
-# #   to = "/.netlify/functions/:splat"
-# #   status = 200
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
 # [[redirects]]
 #    from = "/*"
 #    to = "/index.html"

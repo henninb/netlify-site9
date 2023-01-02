@@ -10,6 +10,7 @@ netlify deploy --prod
 
 echo netlify dev
 echo netlify function:create
+echo netlify functions:invoke
 echo npx netlify-lambda build src
 
 exit 0
