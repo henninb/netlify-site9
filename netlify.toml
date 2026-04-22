@@ -1,12 +1,14 @@
 [build]
+  command = "npm run build"
   functions = "functions"
-  publish = "public"
+  publish = "dist"
 
 [functions]
-  node_bundler = "esbuild" 
+  node_bundler = "esbuild"
 
 [dev]
-  publish = "public"
+  command = "npm run dev"
+  publish = "dist"
   functions = "functions"
   
 [[redirects]]
