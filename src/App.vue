@@ -18,7 +18,7 @@ const sites = [
   <header>
     <p class="header-eyebrow">bhenning.com / dashboard</p>
     <h1>site<em>9</em></h1>
-    <p class="header-sub">tools &amp; utilities — select a destination</p>
+    <p class="header-sub">tools &amp; utilities — select a destination (vue)</p>
     <div class="header-rule"></div>
   </header>
 
