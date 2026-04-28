@@ -313,5 +313,22 @@
 
   <footer>bhenning.com &mdash; site9</footer>
 
+  <script>
+    (function () {
+      var domain = window.location.hostname.endsWith('brianhenning.com') ? 'brianhenning.com' : 'bhenning.com';
+      if (domain === 'bhenning.com') return;
+      document.title = document.title.replace('bhenning.com', domain);
+      var eyebrow = document.querySelector('.header-eyebrow');
+      if (eyebrow) eyebrow.textContent = eyebrow.textContent.replace('bhenning.com', domain);
+      var footer = document.querySelector('footer');
+      if (footer) footer.innerHTML = footer.innerHTML.replace('bhenning.com', domain);
+      document.querySelectorAll('a[href*="bhenning.com"]').forEach(function (a) {
+        a.setAttribute('href', a.getAttribute('href').replace('bhenning.com', domain));
+        var path = a.querySelector('.card-path');
+        if (path) path.textContent = path.textContent.replace('bhenning.com', domain);
+      });
+    })();
+  </script>
+
 </body>
 </html>

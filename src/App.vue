@@ -1,22 +1,18 @@
 <script setup>
 import SiteCard from './components/SiteCard.vue'
 
-const sites = [
-  { name: 'site1', path: 'site1.bhenning.com', url: 'https://site1.bhenning.com' },
-  { name: 'site2', path: 'site2.bhenning.com', url: 'https://site2.bhenning.com' },
-  { name: 'site3', path: 'site3.bhenning.com', url: 'https://site3.bhenning.com' },
-  { name: 'site4', path: 'site4.bhenning.com', url: 'https://site4.bhenning.com' },
-  { name: 'site5', path: 'site5.bhenning.com', url: 'https://site5.bhenning.com' },
-  { name: 'site6', path: 'site6.bhenning.com', url: 'https://site6.bhenning.com' },
-  { name: 'site7', path: 'site7.bhenning.com', url: 'https://site7.bhenning.com' },
-  { name: 'site8', path: 'site8.bhenning.com', url: 'https://site8.bhenning.com' },
-  { name: 'site9', path: 'site9.bhenning.com', url: 'https://site9.bhenning.com' },
-]
+const domain = window.location.hostname.endsWith('brianhenning.com') ? 'brianhenning.com' : 'bhenning.com'
+
+const sites = ['site1', 'site2', 'site3', 'site4', 'site5', 'site6', 'site7', 'site8', 'site9'].map(name => ({
+  name,
+  path: `${name}.${domain}`,
+  url: `https://${name}.${domain}`,
+}))
 </script>
 
 <template>
   <header>
-    <p class="header-eyebrow">bhenning.com / dashboard</p>
+    <p class="header-eyebrow">{{ domain }} / dashboard</p>
     <h1>site<em>9</em></h1>
     <p class="header-sub">tools &amp; utilities — select a destination (vue)</p>
     <div class="header-rule"></div>
@@ -34,7 +30,7 @@ const sites = [
     </div>
   </section>
 
-  <footer>bhenning.com &mdash; site9</footer>
+  <footer>{{ domain }} &mdash; site9</footer>
 </template>
 
 <style>
